@@ -1,0 +1,25 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "document": false
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+        "consistent-return": "off",
+        "max-len": ["error", { "code": 120 }],
+        "semi-style": ["error", "last"],
+        "no-undef": ["error", { "typeof":false }]
+    }
+}
