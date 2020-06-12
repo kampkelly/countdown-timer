@@ -1,0 +1,14 @@
+.time-input {
+    display: flex;
+    div > span {
+        margin-right: 6px;
+        position: relative;
+        top: 25%;
+        bottom: 25%;
+    }
+    input {
+        margin-right: 6px;
+        width: 100px;
+        padding: 8.6px 15px;
+    }
+}
