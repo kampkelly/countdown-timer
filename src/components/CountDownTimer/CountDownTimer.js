@@ -3,18 +3,21 @@ import React from 'react';
 import Display from './Display/Display';
 import SpeedRegulator from './SpeedRegulator/SpeedRegulator';
 import TimeInput from './TimeInput/TimeInput';
+import CountdownContextProvider from "../../state/Contexts/CountdownContext";
 import './CountDownTimer.scss';
 
 const CountDownTimer = () => {
   return (
-    <div className="countdown">
+    <CountdownContextProvider>
+      <div className="countdown">
       <section>
-        <h4>Time yourself!</h4>
+        <h1>Visualize your launch time!</h1>
         <TimeInput />
-        <Display />
+        <Display  />
         <SpeedRegulator />
       </section>
-    </div>
+      </div>
+    </CountdownContextProvider>
   )
 };
 

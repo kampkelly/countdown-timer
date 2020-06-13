@@ -1,14 +1,43 @@
 .time-input {
     display: flex;
+    margin-top: 10px;
+    div {
+        position: relative;
+    }
     div > span {
         margin-right: 6px;
         position: relative;
         top: 25%;
         bottom: 25%;
     }
-    input {
-        margin-right: 6px;
-        width: 100px;
-        padding: 8.6px 15px;
+    
+    .input-container {
+        input {
+            margin-right: 6px;
+            width: 70px;
+            padding: 6px 15px;
+            &.error {
+                outline: none;
+                border:1px solid red;
+                box-shadow: 0 0 10px #70a0d3;
+            }
+        }
+        &:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltip {
+            position: absolute;
+            top: -70%;
+            left: 10%;
+            width: 20vw;
+            margin-right: 0px;
+            font-size: 85%;
+            color: red;
+            height: 20px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
     }
 }

@@ -1,46 +1,83 @@
 .display {
     .alert-info {
+        text-align: center;
         font-weight: 500;
         text-align: center;
         margin-bottom: 0;
         padding-top: 10px;
     }
-    .display-timer {
+    .display-timer-container {
         display: flex;
-        align-items: center;
         justify-content: center;
-        .time {
+        .display-timer {
+            margin-left: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
-            .minutes, .seconds {
-                font-size: 9rem;
-                margin: 0;
-                margin-right: 10px;
+            width: 90%;
+            .blinking{
+                animation:blinkingTimer 1s infinite;
             }
-            .second-count {
-                height: 100px;
-                width: 20px;
+            @keyframes blinkingTimer{
+                0%{     color: red;    }
+                50%{    color: transparent; }
+                100%{   color: red;    }
+            }
+            .time {
                 display: flex;
-                flex-wrap: wrap;
-                align-content: flex-end;
-                margin-bottom: -10px;
-                .square-dot {
-                    height: 20px;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+                .default-color {
+                    color: black;
+                }
+                .red-color {
+                    color: red;
+                }
+                .minutes, .seconds {
+                    font-size: calc(550% + (30 - 10) * ((100vw - 300px) / (1600 - 300)));
+                    margin: 0;
+                    margin-right: 10px;
+                }
+                .second-count {
+                    height: 82px;
                     width: 20px;
-                    background-color: black;
-                    margin-top: 24px;
-                    span:empty:before {
-                        content: "\200b";
-                      }
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-end;
+                    margin-bottom: 0px;
+                    margin-right: 10px;
+                    @media (max-width: 640px) {
+                        margin-bottom: 15px;
+                    } 
+                    @media (max-width: 300px) {
+                        margin-bottom: 22px;
+                    }
+                    .square-dot {
+                        height: 20px;
+                        width: 20px;
+                        &.default-background {
+                            background-color: black;
+                        }
+                        &.red-background {
+                            background-color: red;
+                        }
+                        margin-top: 24px;
+                        span:empty:before {
+                            content: "\200b";
+                        }
+                        @media (max-width: 640px) {
+                            height: 17px;
+                            width: 17px;
+                        }
+                    }
                 }
             }
-        }
-        .pause {
-            font-size: 3rem;
-            margin: 0;
-            cursor: pointer;
+            .pause, .resume {
+                font-size: 3rem;
+                margin: 0;
+                cursor: pointer;
+            }
         }
     }
 }
