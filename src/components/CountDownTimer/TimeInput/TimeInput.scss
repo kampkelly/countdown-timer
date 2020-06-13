@@ -8,7 +8,12 @@
     }
     input {
         margin-right: 6px;
-        width: 100px;
-        padding: 8.6px 15px;
+        width: 70px;
+        padding: 6px 15px;
+        &.error {
+            outline: none;
+            border:1px solid red;
+            box-shadow: 0 0 10px #70a0d3;
+        }
     }
 }
