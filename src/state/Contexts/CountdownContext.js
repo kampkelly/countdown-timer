@@ -57,6 +57,7 @@ const CountdownContextProvider = (props) => {
             seconds: seconds - 1,
             timerColor: 'default'
           });
+          document.getElementById("alarm").play(); 
         } else {
           // on any other run when not a special case
           setState({ ...state, seconds: seconds - 1 });
