@@ -13,7 +13,6 @@ const TimeInput = () => {
   const validInput = () => {
     // validate time input
     if (!time || time <= 0 || time > 60 || !Number.isInteger(Number(time))) {
-      console.log('enter')
       setError(true);
       setState({ ...state, toolTipText: 'input is invalid' });
       return false;
